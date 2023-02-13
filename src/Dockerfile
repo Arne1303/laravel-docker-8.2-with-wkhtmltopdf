@@ -13,6 +13,7 @@ COPY --from=madnight/alpine-wkhtmltopdf-builder:0.12.5-alpine3.10-606718795 \
     /bin/wkhtmltopdf /bin/wkhtmltopdf
 
 RUN chmod +x /bin/wkhtmltopdf;
+RUN ln -s /bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 
 # Clearing cache
 RUN rm -rf /var/cache/apk/*
